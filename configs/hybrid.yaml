@@ -1,0 +1,22 @@
+pipeline:
+  preset: hybrid
+
+features:
+  backend: superpoint_lightglue
+  superpoint:
+    max_num_keypoints: 4096
+
+sfm:
+  backend: vggt
+  colmap:
+    bundle_adjustment: true
+
+dense:
+  backend: vggt
+  vggt:
+    point_confidence_threshold: 0.6
+
+surface:
+  backend: milo
+  milo:
+    iterations: 20000

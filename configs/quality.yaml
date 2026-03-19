@@ -1,0 +1,21 @@
+pipeline:
+  preset: quality
+
+features:
+  backend: superpoint_lightglue
+  superpoint:
+    max_num_keypoints: 8192
+
+sfm:
+  backend: vggt
+  vggt:
+    confidence_threshold: 0.3
+  colmap:
+    bundle_adjustment: true
+
+surface:
+  backend: neurodin
+  neurodin:
+    stage1_config: indoor-small
+    stage2_config: indoor-small
+    resolution: 2048

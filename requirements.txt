@@ -1,0 +1,35 @@
+# Core
+numpy>=1.24,<2.0
+scipy>=1.11
+opencv-python>=4.8
+Pillow>=10.0
+tqdm>=4.66
+loguru>=0.7
+rich>=13.0
+
+# Configuration and CLI
+omegaconf>=2.3
+typer>=0.9
+
+# Structure from Motion
+pycolmap>=3.10
+
+# Feature extraction and matching
+lightglue @ git+https://github.com/cvg/LightGlue.git
+
+# VGGT (Visual Geometry Grounded Transformer)
+huggingface_hub>=0.20
+safetensors>=0.4
+einops>=0.7
+
+# 3D / Mesh processing
+open3d>=0.18
+trimesh>=4.0
+plyfile>=1.0
+pymcubes>=0.1.4
+
+# Visualization
+matplotlib>=3.8
+
+# NeuRodin dependency (build from source with CUDA 12.1)
+# pip install git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch

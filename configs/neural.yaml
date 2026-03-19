@@ -1,0 +1,15 @@
+pipeline:
+  preset: neural
+
+sfm:
+  backend: vggt
+  colmap:
+    bundle_adjustment: false
+
+dense:
+  backend: vggt
+
+surface:
+  backend: milo
+  milo:
+    iterations: 15000

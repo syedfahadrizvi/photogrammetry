@@ -1,0 +1,13 @@
+pipeline:
+  preset: classical
+
+surface:
+  backend: alicevision
+  alicevision:
+    pipeline: photogrammetry
+
+export:
+  formats:
+    - ply
+    - obj
+  include_textures: true

@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "photogrammetry"
+version = "0.1.0"
+description = "Modular photogrammetry pipeline with AliceVision, MILo, and NeuRodin backends"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+dependencies = [
+    "numpy>=1.24,<2.0",
+    "scipy>=1.11",
+    "opencv-python>=4.8",
+    "Pillow>=10.0",
+    "tqdm>=4.66",
+    "loguru>=0.7",
+    "rich>=13.0",
+    "omegaconf>=2.3",
+    "typer>=0.9",
+    "pycolmap>=3.10",
+    "huggingface_hub>=0.20",
+    "safetensors>=0.4",
+    "einops>=0.7",
+    "open3d>=0.18",
+    "trimesh>=4.0",
+    "plyfile>=1.0",
+    "pymcubes>=0.1.4",
+    "matplotlib>=3.8",
+]
+
+[project.scripts]
+photogrammetry = "scripts.run:app"
+
+[tool.setuptools.packages.find]
+include = ["photogrammetry*"]

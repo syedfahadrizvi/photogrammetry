@@ -1,0 +1,72 @@
+pipeline:
+  preset: hybrid
+
+preprocessing:
+  max_image_size: 1600
+  mask_dir: null
+  supported_formats:
+    - jpg
+    - jpeg
+    - png
+    - tiff
+    - bmp
+
+features:
+  backend: superpoint_lightglue
+  superpoint:
+    max_num_keypoints: 4096
+    detection_threshold: 0.005
+  lightglue:
+    depth_confidence: 0.95
+    width_confidence: 0.99
+    flash: true
+
+sfm:
+  backend: vggt
+  vggt:
+    model: facebook/VGGT-1B
+    confidence_threshold: 0.5
+    dtype: float16
+    compile: false
+  colmap:
+    bundle_adjustment: true
+    ba_refine_focal_length: true
+    ba_refine_extra_params: true
+
+dense:
+  backend: vggt
+  vggt:
+    use_depth_maps: true
+    use_point_maps: true
+    point_confidence_threshold: 0.5
+    max_points: 500000
+
+surface:
+  backend: milo
+  alicevision:
+    meshroom_bin: null
+    pipeline: photogrammetry
+    param_overrides: {}
+  milo:
+    iterations: 15000
+    imp_metric: indoor
+    rasterizer: radegs
+  neurodin:
+    stage1_config: indoor-small
+    stage2_config: indoor-small
+    resolution: 2048
+    scale_factor: 0.8
+
+export:
+  formats:
+    - ply
+    - obj
+  include_textures: true
+  include_point_cloud: true
+
+logging:
+  level: INFO
+  log_file: null
+
+device:
+  gpu_id: 0
