@@ -1,0 +1,66 @@
+# ── Python ────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+
+# ── Distribution / packaging ─────────────────────────
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+.Python
+pip-wheel-metadata/
+MANIFEST
+
+# ── Virtual environments ─────────────────────────────
+venv/
+.venv/
+env/
+.env/
+
+# ── Testing / linting ────────────────────────────────
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.tox/
+
+# ── IDE / editor ─────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+
+# ── OS ────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Logs ──────────────────────────────────────────────
+*.log
+logs/
+
+# ── Model weights / checkpoints ──────────────────────
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+*.onnx
+*.bin
+
+# ── Data & output (keep dirs, ignore contents) ───────
+data/*
+!data/.gitkeep
+output/*
+!output/.gitkeep
+
+# ── Third-party: SDFStudio (cloned by setup script) ──
+third_party/sdfstudio/*
+!third_party/sdfstudio/README_PATCHES.md
